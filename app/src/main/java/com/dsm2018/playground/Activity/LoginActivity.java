@@ -17,6 +17,22 @@ public class LoginActivity extends AppCompatActivity {
     TextView signUp;
     OnClickListener onClickListener;
 
+    class OnClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_login:
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.tv_signUp:
+                    Intent intent2 = new Intent(LoginActivity.this, SignUpActivity.class);
+                    startActivity(intent2);
+                    break;
+            }
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,20 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         findPassword = findViewById(R.id.tv_findPassword);
         signUp = findViewById(R.id.tv_signUp);
         signUp.setOnClickListener(onClickListener);
-    }
-
-    class OnClickListener implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.btn_login:
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                case R.id.tv_signUp:
-                    Intent intent2 = new Intent(LoginActivity.this, SignUpActivity.class);
-                    startActivity(intent2);
-            }
-        }
     }
 
 }

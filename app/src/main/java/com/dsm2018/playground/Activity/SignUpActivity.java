@@ -30,14 +30,15 @@ public class SignUpActivity extends AppCompatActivity {
         passwordConfirm = findViewById(R.id.et_passwordConfirm);
         name = findViewById(R.id.et_name);
         signUp = findViewById(R.id.btn_signUp);
+        signUp.setOnClickListener(onClickListener);
     }
 
     class OnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.btn_login:
-                    Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                case R.id.btn_signUp:
+                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                     startActivity(intent);
             }
         }
